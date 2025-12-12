@@ -1,0 +1,10 @@
+- control 
+    - deployment of the home (landing page) - 
+        - refactor index-2.html - 
+            - change names for officecare and add products - 
+                - maintain minimalist design - 
+            - translate 
+                - using html attribute "translate" - 
+                    - test again - 
+    - deploy - 
+    - other pages - 
