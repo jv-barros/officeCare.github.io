@@ -5,6 +5,9 @@
                 - maintain minimalist design - 
             - translate 
                 - using html attribute "translate" - 
-                    - test again - 
+                    - test again - pendent 
     - deploy - 
     - other pages - 
+        - home layout ana - iniciar 
+        - logo branca - alterar 
+        - 
