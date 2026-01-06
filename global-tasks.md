@@ -9,5 +9,5 @@
     - deploy - 
     - other pages - 
         - home layout ana - iniciar 
-        - logo branca - alterar 
+        - logo branca - alterar, fazer no mac por conta do bloqueio da rede no trabalho 
         - 
