@@ -1,0 +1,38 @@
+<%- include('./layout', { title: 'Dashboard' }) %>
+
+<div class="app-shell">
+  <%- include('./partials/sidebar') %>
+  <div class="main-content">
+    <%- include('./partials/header', { user: user }) %>
+
+    <section class="kpi-row">
+      <%- include('./partials/kpi-card', { title: 'Pacientes Hoje', value: kpis.patientsToday || 0 }) %>
+      <%- include('./partials/kpi-card', { title: 'Consultas do Dia', value: kpis.appointmentsToday || 0 }) %>
+      <%- include('./partials/kpi-card', { title: 'Pendências', value: kpis.pending || 0 }) %>
+      <%- include('./partials/kpi-card', { title: 'Faturamento', value: 'R$ ' + (kpis.revenue || 0) }) %>
+    </section>
+
+    <section class="dashboard-grid">
+      <div class="card calendar-card">
+        <div id="calendar"></div>
+      </div>
+
+      <div class="card chart-card">
+        <canvas id="weeklyChart" width="600" height="300"></canvas>
+      </div>
+
+      <div class="card full-width">
+        <h3>Atividade Recente</h3>
+        <ul>
+          <% (recent || []).forEach(r => { %>
+            <li><%= r %></li>
+          <% }) %>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+<script src="/static/server/public/js/dashboard.js"></script>

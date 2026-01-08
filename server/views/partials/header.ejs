@@ -1,0 +1,10 @@
+<header class="top-header">
+  <div class="greeting">
+    <h2>Bem-Vindo, <%= user ? user.email.split('@')[0] : 'Usuário' %></h2>
+    <small>Automação inteligente para sua clínica.</small>
+  </div>
+  <div class="header-actions">
+    <button id="btn-theme">🌙</button>
+    <a href="/logout">Sair</a>
+  </div>
+</header>

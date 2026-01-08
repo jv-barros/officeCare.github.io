@@ -1,0 +1,24 @@
+<%- include('../layout', { title: 'Users' }) %>
+
+<div class="app-shell">
+  <%- include('../partials/sidebar') %>
+  <div class="main-content">
+    <%- include('../partials/header') %>
+
+    <div class="card">
+      <h3>Users <a href="/admin/users/new" style="float:right">New user</a></h3>
+      <table style="width:100%">
+        <thead><tr><th>Email</th><th>Role</th><th>Created</th></tr></thead>
+        <tbody>
+          <% users.forEach(u => { %>
+            <tr>
+              <td><%= u.email %></td>
+              <td><%= u.role %></td>
+              <td><%= u.createdAt.toLocaleString() %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

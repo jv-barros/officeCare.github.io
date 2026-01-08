@@ -1,0 +1,21 @@
+:root{
+  --primary:#e63946;
+  --bg:#f5f6f7;
+  --card:#fff;
+}
+body{font-family:Helvetica,Arial,sans-serif;background:var(--bg);color:#222}
+.app-shell{display:flex;min-height:100vh}
+.sidebar{width:220px;background:var(--primary);color:#fff;padding:1rem;box-sizing:border-box}
+.sidebar .brand{margin-bottom:1rem}
+.sidebar .nav{list-style:none;padding:0}
+.sidebar .nav li{margin:0.6rem 0}
+.sidebar .nav a{color:#fff;text-decoration:none}
+.main-content{flex:1;padding:1rem}
+.top-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.kpi-row{display:flex;gap:1rem;margin-bottom:1rem}
+.kpi-card{background:var(--card);padding:1rem;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.06);flex:1}
+.dashboard-grid{display:grid;grid-template-columns:2fr 1fr;gap:1rem}
+.card{background:var(--card);padding:1rem;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+.card.full-width{grid-column:1 / -1;margin-top:1rem}
+.calendar-card{height:400px}
+@media(max-width:900px){.dashboard-grid{grid-template-columns:1fr}.kpi-row{flex-direction:column}}

@@ -1,0 +1,22 @@
+<%- include('../layout', { title: 'Create user' }) %>
+
+<div class="app-shell">
+  <%- include('../partials/sidebar') %>
+  <div class="main-content">
+    <%- include('../partials/header') %>
+
+    <div class="card" style="max-width:500px">
+      <h3>Create user</h3>
+      <% if (errors && errors.length) { %>
+        <div style="color:red"><% errors.forEach(e => { %><div><%= e %></div><% }) %></div>
+      <% } %>
+      <form method="post" action="/admin/users">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div><label>Email</label><input type="email" name="email" value="<%= old.email || '' %>" required></div>
+        <div><label>Role</label><select name="role"><option value="user">user</option><option value="admin">admin</option></select></div>
+        <div><label>Password</label><input type="password" name="password" required></div>
+        <div style="margin-top:1rem"><button type="submit">Create</button></div>
+      </form>
+    </div>
+  </div>
+</div>
