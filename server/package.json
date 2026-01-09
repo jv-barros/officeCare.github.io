@@ -7,7 +7,8 @@
     "dev": "nodemon app.js",
     "migrate": "npx sequelize db:migrate",
     "seed": "node ./seeders/seed-admin.js",
-    "seed:demo": "node ./seeders/seed-demo-data.js"
+    "seed:demo": "node ./seeders/seed-demo-data.js",
+    "serve:frontend": "npx http-server .. -p 8000 -c-1"
   },
   "dependencies": {
     "express": "^4.18.2",
