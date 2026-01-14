@@ -402,6 +402,18 @@ If you want to investigate further:
 3. Attempt to connect from WSL 2 to confirm it works there:
    - `wsl mysql -h 127.0.0.1 -u officecare -p officecare officecare_dev`
 
+Quick fix (automated) — for existing containers:
+
+- Run the npm helper to switch the dev user to password authentication and then re-run the seed:
+
+```bash
+cd server
+npm run fix-db-auth
+npm run seed
+```
+
+Note: the helper uses the default Docker root password `rootpassword` (change as needed); if the database was already initialized the container will accept the ALTER USER command and update the user's auth plugin.
+
 ---
 
 ## Project structure

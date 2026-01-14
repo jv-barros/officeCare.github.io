@@ -21,7 +21,13 @@ async function seed() {
     console.log('Admin seeded:', adminEmail, 'password:', adminPassword);
     process.exit(0);
   } catch (err) {
-    console.error('Seeding failed:', err);
+    if (err && err.parent && err.parent.code === 'AUTH_SWITCH_PLUGIN_ERROR') {
+      console.error('Seeding failed: DB requires an unsupported auth plugin (auth_gssapi_client).');
+      console.error('If you are using the bundled Docker database, run `npm run fix-db-auth` to switch the dev user to password auth, then re-run `npm run seed`.');
+      console.error('If you are on Windows without Docker, consider using WSL or configure your DB to use password authentication.');
+    } else {
+      console.error('Seeding failed:', err);
+    }
     process.exit(1);
   }
 }

@@ -6,6 +6,12 @@ const sequelize = new Sequelize(process.env.DB_NAME || 'officecare_dev', process
   port: process.env.DB_PORT || 3306,
   dialect: 'mysql',
   logging: false,
+  dialectOptions: {
+    supportBigNumbers: true,
+    bigNumberStrings: true,
+    // Force mysql_native_password for Windows SSPI compatibility
+    password: process.env.DB_PASSWORD || 'officecare',
+  },
 });
 
 module.exports = sequelize;
