@@ -1,4 +1,4 @@
 - front-end and back options - 
     - option A - only front-end  - using, works fine 
-    - option B - full stack version Docker for WSL2 - testing 
+    - option B - full stack version Docker for WSL2 - init  
     - option C - full stack version Docker for Node.js - test, dont working  
